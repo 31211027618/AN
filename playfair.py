@@ -69,8 +69,8 @@ def xoa_man_hinh():
 
 def chuong_trinh_chinh():
     xoa_man_hinh()
-    khoa = "THEDIEIS"
-    van_ban_ro = "ABCDEFGH"
+    khoa = input("Nhập khóa (chữ không có dấu và không chứa 'J'): ")
+    van_ban_ro = input("Nhập văn bản cần mã hóa: ")
     van_ban_ma_hoa = ma_hoa_playfair(van_ban_ro, khoa)
     print("Văn bản đã mã hóa:", van_ban_ma_hoa)
 
