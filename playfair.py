@@ -1,4 +1,4 @@
-import oss
+import os
 
 def tao_ma_tran_playfair(khoa):
     khoa = khoa.replace(" ", "").upper()
