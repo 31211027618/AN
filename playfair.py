@@ -29,6 +29,7 @@ def tim_vi_tri(ma_tran, ki_tu):
 def ma_hoa_playfair(van_ban_ro, khoa):
     ma_tran_playfair = tao_ma_tran_playfair(khoa)
     van_ban_ro = van_ban_ro.upper().replace(" ", "")
+    van_ban_ro = van_ban_ro.replace("J", "I")
     van_ban_ma_hoa = ""
 
     # Thêm 'X' vào giữa các cặp ký tự giống nhau nằm cạnh nhau
@@ -65,7 +66,7 @@ def ma_hoa_playfair(van_ban_ro, khoa):
 
 
 def chuong_trinh_chinh():
-    khoa = input("Nhập khóa (chữ không có dấu và không chứa 'J'): ")
+    khoa = input("Nhập khóa: ")
     van_ban_ro = input("Nhập văn bản cần mã hóa: ")
     van_ban_ma_hoa = ma_hoa_playfair(van_ban_ro, khoa)
     print("Văn bản đã mã hóa:", van_ban_ma_hoa)
