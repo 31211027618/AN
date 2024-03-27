@@ -30,7 +30,7 @@ def ma_hoa_playfair(van_ban_ro, khoa):
     ma_tran_playfair = tao_ma_tran_playfair(khoa)
     van_ban_ro = van_ban_ro.upper().replace(" ", "")
     van_ban_ma_hoa = ""
-    
+
     # Thêm 'X' vào giữa các cặp ký tự giống nhau nằm cạnh nhau
     i = 0
     while i < len(van_ban_ro) - 1:
@@ -47,10 +47,10 @@ def ma_hoa_playfair(van_ban_ro, khoa):
     for i in range(0, len(van_ban_ro), 2):
         ki_tu1 = van_ban_ro[i]
         ki_tu2 = van_ban_ro[i+1]
-        
+
         hang1, cot1 = tim_vi_tri(ma_tran_playfair, ki_tu1)
         hang2, cot2 = tim_vi_tri(ma_tran_playfair, ki_tu2)
-        
+
         if hang1 == hang2:  # Cùng hàng
             van_ban_ma_hoa += ma_tran_playfair[hang1][(cot1 + 1) % 5]
             van_ban_ma_hoa += ma_tran_playfair[hang2][(cot2 + 1) % 5]
@@ -60,15 +60,11 @@ def ma_hoa_playfair(van_ban_ro, khoa):
         else:  # Khác hàng và cột
             van_ban_ma_hoa += ma_tran_playfair[hang1][cot2]
             van_ban_ma_hoa += ma_tran_playfair[hang2][cot1]
-    
+
     return van_ban_ma_hoa
 
-# Xóa màn hình trước khi bắt đầu
-def xoa_man_hinh():
-    os.system('cls' if os.name == 'nt' else 'clear')
 
 def chuong_trinh_chinh():
-    xoa_man_hinh()
     khoa = input("Nhập khóa (chữ không có dấu và không chứa 'J'): ")
     van_ban_ro = input("Nhập văn bản cần mã hóa: ")
     van_ban_ma_hoa = ma_hoa_playfair(van_ban_ro, khoa)
